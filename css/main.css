@@ -46,4 +46,8 @@
     right: 0;
     bottom: 0 !important;
     margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }

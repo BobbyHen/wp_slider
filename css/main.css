@@ -1,0 +1,49 @@
+/* *, body, html {margin: 0; padding: 0; box-sizing: border-box} */
+
+.carousel-container {
+    width: 100%;
+    height: 80vh;
+    background-color: #ccc;
+    margin: 0;
+    position: relative;
+}
+
+.carousel-item {
+    background: #000;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-item.item1 {
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.21190483029149154) 37%, rgba(69,225,255,0) 71%), url(../assets/slider-images/miami-open-2.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.carousel-item.item2 {
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.21190483029149154) 37%, rgba(69,225,255,0) 71%), url(../assets/slider-images/miami-open-1.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+
+.carousel-item.item3 {
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.21190483029149154) 37%, rgba(69,225,255,0) 71%), url(../assets/slider-images/miami-open-3.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.carousel-bottom-control {
+    width: 100%;
+    max-width: 1000px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, .50);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0 !important;
+    margin: auto;
+}

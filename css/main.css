@@ -97,3 +97,9 @@
     right: 772px;
     bottom: 90px;
 }
+
+.mo-detail-img {
+    width: 200px !important;
+    margin-top: -5em;
+    margin-bottom: 2em;
+}

@@ -66,16 +66,43 @@
         font-size: 12px;
         color: #000;
         opacity: 1;
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0);
         display: block;
         height: 90%;
-        width: 24%;
+        width: 30%;
         border-radius: 0;
+        text-align: left;
+        color: #fff;
+        padding: 10px;
+        font-size: 1.2em;
+        position: relative;
       }
 
-      .swiper-pagination-bullet-active {
-        color: #fff;
-        border: solid 3px #fff;
+      .swiper-pagination-bullet:after {
+        border-right: solid 2px #fff;
+        display: block;
+        width: 2px;
+        height: 100px;
+        content: "";
+        position: relative;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000000000;
+        margin-top: -28%;
+        position: absolute;
+      }
+
+      .swiper-pagination-bullet:nth-child(3):after {
+        border: none;
+      }
+
+      .post-num {
+          font-size: .8em !important;
+      }
+
+      .swiper-pagination-bullet-active .pageination-dot {
+        background-color:#E7691F;
       }
 
       .swiper-button-next, .swiper-button-prev {
@@ -91,24 +118,26 @@
         <div class="swiper-slide carousel-item item1">
             <div class="slide-content">
                 <span class="slide-num">01</span>
-                <h2 class="slide-title">Longtime friends Teylor Fritz and Tommy Paul to Meet in Theird Round</h2>
+                <h2 class="slide-title"></h2>
             </div>
         </div>
         <div class="swiper-slide carousel-item item2">
             <div class="slide-content">
                 <span class="slide-num">02</span>
-                <h2 class="slide-title">After two years away, the Austrian is setting himself up as a major contender.</h2>
+                <h2 class="slide-title"></h2>
             </div>
         </div>
         <div class="swiper-slide carousel-item item3">
             <div class="slide-content">
                 <span class="slide-num">03</span>
-                <h2 class="slide-title">After two years away, the Austrian is setting himself up as a major contender.</h2>
+                <h2 class="slide-title"></h2>
             </div>
         </div>
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="arrow-container">
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
       <div class="carousel-bottom-control">
         <div class="swiper-pagination carousel-bottom-control">
         </div>
@@ -120,17 +149,44 @@
 
     <!-- Initialize Swiper -->
     <script>
-      var swiper = new Swiper(".mySwiper", {
+        let slideTitles = document.querySelectorAll('.slide-title')
+        const postData = [
+            {
+                postTitle: 'Longtime friends Teylor Fritz and Tommy Paul to Meet in Theird Round',
+                postUrl: '',
+            },
+            {
+                postTitle: 'After two years away, the Austrian is setting himself up as a major contender.',
+                postUrl: '',
+            },
+            {
+                postTitle: 'After two years away, the Austrian is setting himself up as a major contender.',
+                postUrl: '',
+            }
+        ]
+
+        for(let i = 0; i < slideTitles.length; i++) {
+            slideTitles[i].innerText = postData[i].postTitle
+        }
+
+        const swiper = new Swiper(".mySwiper", {
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
           renderBullet: function (index, className) {
             // return '<span class="' + className + '">' + (index + 1) + "</span>";
-            return `
-                <div class=" ${className}">
-                    <h3>Article Title 0${index+1}</h3>
-                </div>
-            `
+            if(index == postData.length  + 1){
+                return `<div class="ad-placement-slider"></div>`
+            }
+            else {
+                return `
+                    <div class=" ${className}">
+                        <span class="post-num">0${index+1}</span>
+                        <p>${postData[index].postTitle}</p>
+                        <div class="pageination-dot"></div>
+                    </div>
+                `
+            }
           }
         },
         navigation: {

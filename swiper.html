@@ -88,14 +88,30 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper carousel-container">
-        <div class="swiper-slide carousel-item item1">Slide 1</div>
-        <div class="swiper-slide carousel-item item2">Slide 2</div>
-        <div class="swiper-slide carousel-item item3">Slide 3</div>
+        <div class="swiper-slide carousel-item item1">
+            <div class="slide-content">
+                <span class="slide-num">01</span>
+                <h2 class="slide-title">Longtime friends Teylor Fritz and Tommy Paul to Meet in Theird Round</h2>
+            </div>
+        </div>
+        <div class="swiper-slide carousel-item item2">
+            <div class="slide-content">
+                <span class="slide-num">02</span>
+                <h2 class="slide-title">After two years away, the Austrian is setting himself up as a major contender.</h2>
+            </div>
+        </div>
+        <div class="swiper-slide carousel-item item3">
+            <div class="slide-content">
+                <span class="slide-num">03</span>
+                <h2 class="slide-title">After two years away, the Austrian is setting himself up as a major contender.</h2>
+            </div>
+        </div>
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <div class="carousel-bottom-control">
-        <div class="swiper-pagination carousel-bottom-control"></div>
+        <div class="swiper-pagination carousel-bottom-control">
+        </div>
       </div>
     </div>
 
@@ -112,7 +128,7 @@
             // return '<span class="' + className + '">' + (index + 1) + "</span>";
             return `
                 <div class=" ${className}">
-                    <h3>Article Title ${index}</h3>
+                    <h3>Article Title 0${index+1}</h3>
                 </div>
             `
           }

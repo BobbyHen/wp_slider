@@ -14,6 +14,19 @@
     width: 100%;
 }
 
+.slide-content {
+    color: #fff;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    max-width: 1000px;
+    text-align: left;
+}
+
+.slide-title {
+    max-width: 500px;
+    font-size: 2em;
+}
+
 .carousel-item.item1 {
     background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.21190483029149154) 37%, rgba(69,225,255,0) 71%), url(../assets/slider-images/miami-open-2.jpg);
     background-size: cover;
